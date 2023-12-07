@@ -1,5 +1,6 @@
+package solutions;
+
 import utils.FileProcessing;
-import utils.StringIntUtils;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,3 +1,5 @@
+package solutions;
+
 import utils.FileProcessing;
 
 import java.util.ArrayList;

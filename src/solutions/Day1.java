@@ -1,3 +1,5 @@
+package solutions;
+
 import utils.FileProcessing;
 import utils.StringIntUtils;
 
@@ -9,9 +11,6 @@ public class Day1 {
 
     public static void main(String[] args) {
         System.out.println("Hello world!");
-        String test = StringIntUtils.replaceWrittenDigitsWithNumbers("fjeightwo");
-        System.out.println(getFirstNumber(test));
-        System.out.println(getLastNumber(test));
         System.out.println(day1(2));
     }
 
