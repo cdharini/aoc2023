@@ -1,6 +1,6 @@
 package solutions;
 
-import utils.FileProcessing;
+import utils.FileUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -39,8 +39,8 @@ public class Day7 {
     public static void main(String[] args) {
         String testFileName = "src/inputs/test";
         String fileName = "src/inputs/day7.txt";
-        List<String> testLines = FileProcessing.readFile(testFileName);
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> testLines = FileUtils.readFile(testFileName);
+        List<String> lines = FileUtils.readFile(fileName);
         System.out.println(new Day7().solve(testLines, 2));
         System.out.println(new Day7().solve(lines, 2));
     }

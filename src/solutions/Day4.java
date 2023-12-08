@@ -1,6 +1,6 @@
 package solutions;
 
-import utils.FileProcessing;
+import utils.FileUtils;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -18,7 +18,7 @@ public class Day4 {
 
     public int part2(String fileName) {
         Map<Integer, Integer> cardToCopyNum = new HashMap<>();
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> lines = FileUtils.readFile(fileName);
         // initialize card to numbers map
         for (int i = 1; i <= lines.size(); i++) {
             cardToCopyNum.put(i, 1);
@@ -42,7 +42,7 @@ public class Day4 {
     }
     public int part1(String fileName) {
         int res = 0;
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> lines = FileUtils.readFile(fileName);
 
         for (String l : lines) {
             l = l.split(":")[1].strip();

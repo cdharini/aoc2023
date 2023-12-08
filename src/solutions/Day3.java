@@ -1,6 +1,6 @@
 package solutions;
 
-import utils.FileProcessing;
+import utils.FileUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +40,7 @@ public class Day3 {
 
     public int part2(String fileName) {
         int res = 0;
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> lines = FileUtils.readFile(fileName);
         Map<Pos, List<Integer>> starsByNumsNearBy = new HashMap<>();
 
 
@@ -107,7 +107,7 @@ public class Day3 {
     }
 
     public static int part1(String fileName) {
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> lines = FileUtils.readFile(fileName);
         List<Integer> partSet = new ArrayList<Integer>();
 
         for (int i = 0; i < lines.size(); i++) {

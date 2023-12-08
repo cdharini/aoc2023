@@ -1,6 +1,6 @@
 package solutions;
 
-import utils.FileProcessing;
+import utils.FileUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +26,7 @@ public class Day5 {
     }
 
     public Long part1(String fileName) {
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> lines = FileUtils.readFile(fileName);
         List<Long> seedNums = Arrays.stream(lines.get(0).substring(lines.get(0).indexOf(' ')).strip().split(" ")).map(x -> Long.parseLong(x)).collect(Collectors.toList());
         List<List<SrcDestMaps>> mutationMaps = parseIntoMaps(lines);
         return getFinalRes(seedNums.stream(), mutationMaps);
@@ -34,7 +34,7 @@ public class Day5 {
 
     public long part2(String fileName) {
         Long res = Long.MAX_VALUE;
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> lines = FileUtils.readFile(fileName);
         List<List<SrcDestMaps>> mutationMaps = parseIntoMaps(lines);
 
         String[] seedNumsStr = lines.get(0).substring(lines.get(0).indexOf(' ')).strip().split(" ");

@@ -1,6 +1,6 @@
 package solutions;
 
-import utils.FileProcessing;
+import utils.FileUtils;
 import utils.StringIntUtils;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class Day1 {
     }
 
     public static long day1(int part) {
-        List<String> input = FileProcessing.readFile("src/inputs/day1.txt");
+        List<String> input = FileUtils.readFile("src/inputs/day1.txt");
         long res = 0L;
         int firstDigit, lastDigit;
         for (String i : input) {

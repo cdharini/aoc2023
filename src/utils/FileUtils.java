@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileProcessing {
+public class FileUtils {
         public static List<String> readFile(final String path) {
             List<String> linesInFile = new ArrayList<>();
             try (BufferedReader reader = new BufferedReader(new FileReader(path))) {

@@ -1,6 +1,6 @@
 package solutions;
 
-import utils.FileProcessing;
+import utils.FileUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,7 +18,7 @@ public class Day2 {
 
     public static long part1(String fileName) {
         long res = 0L;
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> lines = FileUtils.readFile(fileName);
         for (String line : lines) {
             if (isPossible(line)) {
                 res += getGameNum(line);
@@ -29,7 +29,7 @@ public class Day2 {
 
     public static long part2(String fileName) {
         long res = 0L;
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> lines = FileUtils.readFile(fileName);
         for (String line : lines) {
                 res += powerSet(line);
         }

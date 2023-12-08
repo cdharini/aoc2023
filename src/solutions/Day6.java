@@ -1,6 +1,6 @@
 package solutions;
 
-import utils.FileProcessing;
+import utils.FileUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,8 +12,8 @@ public class Day6 {
     public static void main(String[] args) {
         String testFileName = "src/inputs/test";
         String fileName = "src/inputs/day6.txt";
-        List<String> testLines = FileProcessing.readFile(testFileName);
-        List<String> lines = FileProcessing.readFile(fileName);
+        List<String> testLines = FileUtils.readFile(testFileName);
+        List<String> lines = FileUtils.readFile(fileName);
         System.out.println(new Day6().part1QuadraticFormula(testLines));
         System.out.println(new Day6().part1QuadraticFormula(lines));
         System.out.println(new Day6().part2QuadraticFormula(testLines));
