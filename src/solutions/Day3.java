@@ -14,29 +14,11 @@ public class Day3 {
         System.out.println("Hello world!");
         String testFileName = "src/inputs/test";
         String fileName = "src/inputs/day3.txt";
-        System.out.println(new Day3().part2(testFileName));
+        //System.out.println(new Day3().part2(testFileName));
         System.out.println(new Day3().part2(fileName));
     }
 
-    class Pos {
-        int x;
-        int y;
-        public Pos(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-        @Override
-        public boolean equals(Object p) {
-            if (p == this) return true;
-            if (!(p instanceof  Pos)) return false;
-            return ((Pos) p).x == this.x && ((Pos) p).y == this.y;
-        }
-        @Override
-        public int hashCode() {
-            String a = x + "-" + y;
-            return a.hashCode();
-        }
-    }
+    record Pos (int x, int y) {}
 
     public int part2(String fileName) {
         int res = 0;

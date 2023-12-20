@@ -13,17 +13,10 @@ public class Day5 {
         String testFileName = "src/inputs/test";
         String fileName = "src/inputs/day5.txt";
         System.out.println(new Day5().part1(testFileName));
-        System.out.println(new Day5().part1(fileName));
+        System.out.println(new Day5().part2(fileName));
     }
 
-    class SrcDestMaps {
-        long src, dst, range;
-        public SrcDestMaps(String[] nums) {
-            this.dst = Long.parseLong(nums[0]);
-            this.src = Long.parseLong(nums[1]);
-            this.range = Long.parseLong(nums[2]);
-        }
-    }
+    record SrcDestMaps(long dst, long src, long range) {}
 
     public Long part1(String fileName) {
         List<String> lines = FileUtils.readFile(fileName);
@@ -56,7 +49,7 @@ public class Day5 {
     List<long []> mergeIntervals(List<long []> intervals) {
         List<long []> res = new ArrayList<>();
         //sort by start and then end
-        intervals.sort( (a , b) -> a[0] == b[0] ? Long.compare(a[1], b[1]) : Long.compare(a[0], b[0]));
+        intervals.sort((a , b) -> a[0] == b[0] ? Long.compare(a[1], b[1]) : Long.compare(a[0], b[0]));
 
         long curSt = intervals.get(0)[0];
         long curEnd = intervals.get(0)[1];
@@ -107,7 +100,7 @@ public class Day5 {
                 List<SrcDestMaps> curMap = new ArrayList<>();
                 while(!curLine.isBlank()) {
                     String[] nums = curLine.split(" ");
-                    curMap.add(new SrcDestMaps(nums));
+                    curMap.add(new SrcDestMaps(Long.parseLong(nums[0]), Long.parseLong(nums[1]), Long.parseLong(nums[2])));
                     i++;
                     if (i < lines.size()) {
                         curLine = lines.get(i).strip();

@@ -15,7 +15,7 @@ public class Day10 {
         String fileName = "src/inputs/day10.txt";
         List<String> testLines = FileUtils.readFile(testFileName);
         List<String> lines = FileUtils.readFile(fileName);
-        System.out.println(new Day10().solvePart2(testLines));
+     //   System.out.println(new Day10().solvePart2(testLines));
        System.out.println(new Day10().solvePart2(lines));
     }
 
@@ -29,20 +29,8 @@ public class Day10 {
             Arrays.fill(tmp, 0);
             fieldWithOnlyLoop[i] = tmp;
         }
-        int[] topr = new int[]{Integer.MAX_VALUE, 0};
-        int[] botl = new int[]{0, Integer.MAX_VALUE};
         for (int [] i : loopPath) {
             fieldWithOnlyLoop[i[0]][i[1]] = 1;
-            if (i[0] < topr[0]) {
-                topr = i;
-            } else if (i[0] == topr[0] && i[1] > topr[1]) {
-                topr = i;
-            }
-            if (i[0] > botl[0]) {
-                botl = i;
-            } else if (i[0] == botl[0] && i[1] < botl[1]) {
-                botl = i;
-            }
         }
         for (int i = 0; i < fieldWithOnlyLoop.length; i++) {
             for (int j = 0; j < fieldWithOnlyLoop[i].length; j++) {
@@ -50,7 +38,7 @@ public class Day10 {
                     int sum = 0;
                     // sum diagonally going top left
                     for (int row = i, col = j; row >= 0 && col >= 0; row--, col--) {
-                           // manually checked my S is a 7 so including that here as well
+                        // manually checked my S is a 7 so including that here as well
                         if (lines.get(row).charAt(col) == 'L' || lines.get(row).charAt(col) == '7' || lines.get(row).charAt(col) == 'S') {
                                 continue;
                             } else {
@@ -150,7 +138,6 @@ public class Day10 {
                 return false;
         return true;
     }
-
 
     public static Map<Character, int[][]> dirMap = Map.of(
             '|', (new int[][]{new int[]{-1, 0}, new int[]{1,0}}),
