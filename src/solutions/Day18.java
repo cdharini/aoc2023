@@ -29,7 +29,7 @@ public class Day18 {
         long boundary = 0;
         vertices.add(vertices.get(0));
         for (int i = 1; i < vertices.size() - 1; i++) {
-            area += (long) vertices.get(i)[0]*(vertices.get(i-1)[1] - vertices.get(i+1)[1]);
+            area += (long) vertices.get(i)[0]*(vertices.get(i+1)[1] - vertices.get(i-1)[1]);
             boundary += (long)Math.abs(vertices.get(i)[0] - vertices.get(i-1)[0]) + Math.abs(vertices.get(i)[1] - vertices.get(i-1)[1]);
         }
         return Math.abs(area)/2 + boundary/2 + 1;
